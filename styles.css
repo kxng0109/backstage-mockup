@@ -1,0 +1,272 @@
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	scroll-behavior: smooth;
+	color: var(--black);
+	overflow: hidden;
+}
+
+::-webkit-scrollbar{
+	width: 0px;
+}
+
+:root{
+	--green: #00c1b5;
+	--orange: #ff651a;
+	--yellow: #ffbe00;
+	--blue: #1d3fbb;
+	--red: #e30512;
+	--topbottom: 20px;
+	--leftright: 15.2px;
+	--black: #231f20;
+}
+
+body{
+	font-family: 'Roboto', sans-serif;
+	width: 100vw;
+	height: 100vh;
+}
+
+#logo{
+	width: 260px;
+	position: fixed;
+	z-index: 1;
+	top: var(--topbottom);
+	left: var(--leftright);
+}
+
+.container{
+	width: 100%;
+	height: 100%;
+	background: var(--green);
+	position: relative;
+}
+
+#aboutus{
+	position: fixed;
+	z-index: 1;
+	bottom: var(--topbottom);
+	left: 22px;
+	width: 25%;
+}
+
+#aboutus>h4{
+	font-size: 18px;
+	font-weight: 600;
+}
+
+#aboutus>h4:nth-child(1){
+	line-height: 25.5px;
+}
+
+#aboutus>p{
+	font-size: 12px;	  
+	margin-top: 7px;
+}
+
+#privacy{
+	margin-top: 32px;
+}
+
+#email{
+	position: fixed;
+	z-index: 1;
+	right: var(--leftright);
+	top: 21px;
+	text-decoration: none;
+	font-weight: 600;
+	font-size: 18px;
+}
+
+#issues{
+	position: fixed;
+	z-index: 1;
+	right: var(--leftright);
+	bottom: 21px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: center;
+	font-size: 18px;
+	height: 134px;
+}
+
+#issues>*{
+	text-decoration: none;
+}
+
+#issues>*:hover, #email:hover, .clink:hover{
+	text-decoration: underline;
+}
+
+#aboutus>p>a:hover, #privacy>a:hover{
+	text-decoration: none;
+}
+
+.container{
+	width: 100%;
+	height: 100%;
+	scroll-snap-type: y mandatory;
+	overflow-y: scroll;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-between;
+	transition: all 0.5s ease-in-out;
+}
+
+.book-info{
+	flex: none;
+	scroll-snap-align: center;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
+	height: 100vh;
+	font-size: 15px;
+}
+
+.book-info>*{
+	margin: 12.5px 0;
+}
+
+.title{
+	margin-top: 0;
+}
+
+.book-info>h4{
+	margin-top: 9px;
+	margin-bottom: 20px;
+}
+
+.books{
+	margin: 0;
+}
+
+.books{
+	width: 420px;
+}
+
+.clink{
+	text-decoration: none;
+	color: white;
+	font-weight: 600;
+}
+
+
+@media (max-width: 990px) and (min-width: 768px), (max-height: 650px){
+	#aboutus, #email{
+		position: relative;
+		inset: auto;
+	}
+
+	#logo{
+		position: relative;
+		float: left;
+		top: 23px;
+		left: 0px;
+	}
+
+	#issues{
+		display: none;
+	}
+
+	.container{
+		scroll-snap-type: none;
+		padding: 0 16px;
+		text-align: center;
+		display: block;
+	}
+
+	#issue1>h4{
+		line-height: 22px;
+		width: 95%;
+	}
+
+	.book-info{
+		scroll-snap-align: none;
+		height: 100vh;
+	}
+
+	.books{
+		max-width: 86.7%;
+		height: auto;
+		/*width: 340px;*/
+	}
+
+	#aboutus{
+		width: 26vw;
+		text-align: left;
+		padding-bottom: 21px;
+		float: left;
+		padding: 0 0 21px 0;
+	}
+
+	#email{
+		display: block;
+		float: right;
+		margin: auto 0;
+		clear: both;
+		margin-top: -42px;
+	}
+}
+
+
+@media (max-width: 767px){
+	#aboutus, #email{
+		position: relative;
+		inset: auto;
+	}
+
+	#logo{
+		position: relative;
+		width: 150px;
+		left: 0px;
+		top: 23px;
+		float: left;
+	}	
+
+	#issues{
+		display: none;
+	}
+
+	#issue1>h4{
+		line-height: 22px;
+		width: 95%;
+	}
+	
+	.book-info{
+		scroll-snap-align: none;
+		height: 100vh;
+	}
+
+	.container{
+		scroll-snap-type: none;
+		padding: 0 16px;
+		text-align: center;
+		display: block;
+	}
+
+	.books{
+		max-width: 86.7%;
+		height: auto;
+	}
+
+	/*.books{
+		width: 340px;
+	}*/
+
+	#aboutus{
+		width: 86vw;
+		margin: 0 auto;
+		text-align: center;
+		padding: 15px 0 0 0;
+	}
+
+	#email{
+		margin: 50px 0;
+		display: block;
+	}
+}
